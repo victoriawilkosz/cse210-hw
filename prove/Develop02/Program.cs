@@ -66,6 +66,7 @@ class Program
         Console.Write("Your response: ");
         string entryText = Console.ReadLine();
         Entry newEntry = new Entry(DateTime.Now.ToString(), prompt, entryText, mood, location);
+        // Added mood and location to Entry class for more detailed entries
         journal.AddEntry(newEntry);
         Console.WriteLine("Entry added!\n");
     }
