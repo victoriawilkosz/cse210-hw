@@ -17,7 +17,7 @@ class GoalManager
     int choice = -1;
     while (choice != 0)
     {
-        Console.WriteLine("1. Display Score");
+        Console.WriteLine("1. Display Player Info");
         Console.WriteLine("2. List Goal Names");
         Console.WriteLine("3. List Goal Details");
         Console.WriteLine("4. Create Goal");
@@ -84,10 +84,45 @@ class GoalManager
     }
 }
 
-    public void DisplayPlayerInfo()
+   public void DisplayPlayerInfo()
+{
+    Console.WriteLine($"Player's current score: {_score}");
+
+    string rank = GetRank(_score);
+    if (!string.IsNullOrEmpty(rank))
     {
-        Console.WriteLine($"Player's current score: {_score}");
+        Console.WriteLine($"Current rank: {rank}");
     }
+}
+
+private string GetRank(int score)
+{
+    if (score >= 0 && score < 100)
+    {
+        return "Beginner Goal-setter";
+    }
+    else if (score >= 100 && score < 500)
+    {
+        return "Efficient Achiever";
+    }
+    else if (score >= 500 && score < 750)
+    {
+        return "Persistent Achiever";
+    }
+    else if (score >= 750 && score < 1000)
+    {
+        return "Dedicated Taskmaster";
+    }
+    else if (score >= 1000 && score < 5000)
+    {
+        return "Master of Goals";
+    }
+    // Add more ranks as needed
+    else
+    {
+        return "Goal-setting Legend";
+    }
+}
 
     public void ListGoalNames()
     {
