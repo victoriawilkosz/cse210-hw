@@ -8,3 +8,5 @@ class Program
         goalManager.Start();
     }
 }
+
+// Added ranks based on the user's score as additional functionality
