@@ -33,9 +33,11 @@ class Program
 
         Order order3 = new Order(customer3);
         order3.AddProduct(product3);
+        order3.AddProduct(product2);
 
         Order order4 = new Order(customer4);
         order4.AddProduct(product3);
+        order4.AddProduct(product2);
         order4.AddProduct(product1);
 
         // Displaying order details
